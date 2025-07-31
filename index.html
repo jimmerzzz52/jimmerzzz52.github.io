@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Climate Change: Regional Impacts Analysis</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 id="pageTitle">Global Climate Change: Regional Impacts Analysis</h1>
+        <p id="explanation">
+            Explore how climate change affects different regions of the world through temperature anomalies, 
+            sea level rise, and extreme weather events. Navigate through the global overview to discover 
+            specific regional stories and their unique challenges.
+        </p>
+    </header>
+
+    <nav class="navigation">
+        <button id="overview-btn" class="nav-btn active">Global Overview</button>
+        <button id="temperature-btn" class="nav-btn">Temperature Trends</button>
+        <button id="regional-btn" class="nav-btn">Regional Analysis</button>
+        <button id="interactive-btn" class="nav-btn">Interactive Explorer</button>
+    </nav>
+
+    <main>
+        <div id="visualization-container">
+            <svg id="main-chart" width="900" height="600"></svg>
+        </div>
+        
+        <div id="annotation-container"></div>
+        
+        <div id="controls-container">
+            <div id="parameter-controls" style="display: none;">
+                <label for="year-slider">Year: <span id="year-value">2020</span></label>
+                <input type="range" id="year-slider" min="1880" max="2020" value="2020">
+                
+                <label for="region-select">Region:</label>
+                <select id="region-select">
+                    <option value="global">Global</option>
+                    <option value="north-america">North America</option>
+                    <option value="europe">Europe</option>
+                    <option value="asia">Asia</option>
+                    <option value="africa">Africa</option>
+                    <option value="south-america">South America</option>
+                    <option value="australia">Australia</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="story-container">
+            <div id="story-text"></div>
+        </div>
+    </main>
+
+    <div id="tooltip" class="tooltip"></div>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/d3-svg-annotation@2"></script>
+    <script src="script.js"></script>
+</body>
+</html>
